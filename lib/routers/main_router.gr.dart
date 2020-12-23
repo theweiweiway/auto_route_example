@@ -21,25 +21,25 @@ class MainRouter extends _i1.RootStackRouter {
   @override
   final Map<String, _i1.PageFactory> pagesMap = {
     HomeRoute.name: (data) {
-      return _i1.MaterialPageX(data: data, child: _i4.HomePage());
+      return _i1.AdaptivePage(data: data, child: _i4.HomePage());
     },
     GroupsFeature.name: (data) {
-      return _i1.MaterialPageX(data: data, child: const _i1.EmptyRouterPage());
+      return _i1.AdaptivePage(data: data, child: const _i1.EmptyRouterPage());
     },
     AccountFeature.name: (data) {
-      return _i1.MaterialPageX(data: data, child: const _i1.EmptyRouterPage());
+      return _i1.AdaptivePage(data: data, child: const _i1.EmptyRouterPage());
     },
     GroupsRoute.name: (data) {
-      return _i1.MaterialPageX(data: data, child: _i5.GroupsPage());
+      return _i1.AdaptivePage(data: data, child: _i5.GroupsPage());
     },
     GroupsDetailsRoute.name: (data) {
-      return _i1.MaterialPageX(data: data, child: _i6.GroupsDetailsPage());
+      return _i1.AdaptivePage(data: data, child: _i6.GroupsDetailsPage());
     },
     AccountRoute.name: (data) {
-      return _i1.MaterialPageX(data: data, child: _i7.AccountPage());
+      return _i1.AdaptivePage(data: data, child: _i7.AccountPage());
     },
     AccountDetailsRoute.name: (data) {
-      return _i1.MaterialPageX(data: data, child: _i8.AccountDetailsPage());
+      return _i1.AdaptivePage(data: data, child: _i8.AccountDetailsPage());
     }
   };
 

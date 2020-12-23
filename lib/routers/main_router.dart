@@ -6,14 +6,14 @@ import 'package:auto_route_example/routers/groups_router.dart';
 
 export './main_router.gr.dart';
 
-@MaterialAutoRouter(
+@AdaptiveAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
     AutoRoute(
-      path: '/',
+      path: '',
       page: HomePage,
-      usesTabsRouter: true,
       guards: [AuthGuard],
+      usesTabsRouter: true,
       children: [
         groupsRouter,
         accountRouter,
