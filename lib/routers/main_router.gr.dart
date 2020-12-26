@@ -20,33 +20,33 @@ class MainRouter extends _i1.RootStackRouter {
 
   @override
   final Map<String, _i1.PageFactory> pagesMap = {
-    HomeRoute.name: (data) {
-      return _i1.AdaptivePage(data: data, child: _i4.HomePage());
+    HomeRoute.name: (entry) {
+      return _i1.AdaptivePage(entry: entry, child: _i4.HomePage());
     },
-    GroupsFeature.name: (data) {
-      return _i1.AdaptivePage(data: data, child: const _i1.EmptyRouterPage());
+    GroupsFeature.name: (entry) {
+      return _i1.AdaptivePage(entry: entry, child: const _i1.EmptyRouterPage());
     },
-    AccountFeature.name: (data) {
-      return _i1.AdaptivePage(data: data, child: const _i1.EmptyRouterPage());
+    AccountFeature.name: (entry) {
+      return _i1.AdaptivePage(entry: entry, child: const _i1.EmptyRouterPage());
     },
-    GroupsRoute.name: (data) {
-      return _i1.AdaptivePage(data: data, child: _i5.GroupsPage());
+    GroupsRoute.name: (entry) {
+      return _i1.AdaptivePage(entry: entry, child: _i5.GroupsPage());
     },
-    GroupsDetailsRoute.name: (data) {
-      return _i1.AdaptivePage(data: data, child: _i6.GroupsDetailsPage());
+    GroupsDetailsRoute.name: (entry) {
+      return _i1.AdaptivePage(entry: entry, child: _i6.GroupsDetailsPage());
     },
-    AccountRoute.name: (data) {
-      return _i1.AdaptivePage(data: data, child: _i7.AccountPage());
+    AccountRoute.name: (entry) {
+      return _i1.AdaptivePage(entry: entry, child: _i7.AccountPage());
     },
-    AccountDetailsRoute.name: (data) {
-      return _i1.AdaptivePage(data: data, child: _i8.AccountDetailsPage());
+    AccountDetailsRoute.name: (entry) {
+      return _i1.AdaptivePage(entry: entry, child: _i8.AccountDetailsPage());
     }
   };
 
   @override
   List<_i1.RouteConfig> get routes => [
         _i1.RouteConfig<HomeRoute>(HomeRoute.name,
-            path: '',
+            path: '/',
             usesTabsRouter: true,
             routeBuilder: (match) => HomeRoute.fromMatch(match),
             guards: [
@@ -80,7 +80,7 @@ class MainRouter extends _i1.RootStackRouter {
 
 class HomeRoute extends _i1.PageRouteInfo {
   const HomeRoute({List<_i1.PageRouteInfo> children})
-      : super(name, path: '', initialChildren: children);
+      : super(name, path: '/', initialChildren: children);
 
   HomeRoute.fromMatch(_i1.RouteMatch match) : super.fromMatch(match);
 

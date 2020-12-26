@@ -10,7 +10,7 @@ export './main_router.gr.dart';
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
     AutoRoute(
-      path: '',
+      path: '/',
       page: HomePage,
       guards: [AuthGuard],
       usesTabsRouter: true,

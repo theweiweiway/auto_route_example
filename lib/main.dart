@@ -13,16 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routeInformationParser: _router.defaultRouteParser(),
-      routerDelegate: _router.delegate(
-        initialRoutes: [
-          HomeRoute(children: [GroupsRoute(), AccountRoute()])
-          // I also tried this:
-          //
-          // HomeRoute(children: [
-          //   GroupsFeature(children: [GroupsRoute(), AccountRoute()]),
-          // ])
-        ],
-      ),
+      routerDelegate: _router.delegate(),
       builder: (_, router) {
         return router;
       },

@@ -8,6 +8,25 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
+  String path = "";
+
+  @override
+  void didChangeDependencies() {
+    var rootDelegate = RootRouterDelegate.of(context);
+    rootDelegate.addListener(() {
+      final newPath = rootDelegate.currentConfiguration.map((a) {
+        if (a.path.isNotEmpty && !a.path.contains("/")) {
+          return '/' + a.path;
+        }
+        return "";
+      }).join("");
+      setState(() {
+        path = newPath;
+      });
+    });
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,14 +36,12 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
       duration: Duration(milliseconds: 400),
       builder: (context, child, animation) {
         final tabsRouter = context.tabsRouter;
-        final currentPath = context.router.currentRoute.path;
-        print(currentPath); // prints empty string
         return Scaffold(
           appBar: AppBar(
             title: Text(tabsRouter.currentRoute.path),
           ),
           body: FadeTransition(child: child, opacity: animation),
-          bottomNavigationBar: currentPath != '/groups/details'
+          bottomNavigationBar: path == '/groups' || path == '/account'
               ? buildBottomNavigationBar(tabsRouter)
               : null,
         );
