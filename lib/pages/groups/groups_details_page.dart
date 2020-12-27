@@ -12,6 +12,11 @@ class GroupsDetailsPage extends StatelessWidget {
               child: Text('back'),
               onPressed: () {
                 context.router.pop();
+              }),
+          RaisedButton(
+              child: Text('PRINT CURRENT CONFIG'),
+              onPressed: () {
+                print(RootRouterDelegate.of(context).currentConfiguration);
               })
         ],
       ),
