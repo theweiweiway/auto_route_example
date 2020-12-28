@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       routeInformationParser: _router.defaultRouteParser(),
       routerDelegate: _router.delegate(
-        initialDeepLink: "/groups/root/details",
-      ),
+          // initialDeepLink: "/groups/root/details",
+          ),
       builder: (_, router) {
         return router;
       },

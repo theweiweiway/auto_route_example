@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
             title: Text(tabsRouter.currentRoute.path),
           ),
           body: FadeTransition(child: child, opacity: animation),
-          bottomNavigationBar: path == '/groups' || path == '/account'
+          bottomNavigationBar: path == '/groups/root' || path == '/account/root'
               ? buildBottomNavigationBar(tabsRouter)
               : null,
         );
