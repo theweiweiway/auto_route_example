@@ -57,10 +57,12 @@ class MainRouter extends _i1.RootStackRouter {
                   path: 'groups',
                   routeBuilder: (match) => GroupsFeature.fromMatch(match),
                   children: [
+                    _i1.RouteConfig('#redirect',
+                        path: '', redirectTo: 'root', fullMatch: true),
                     _i1.RouteConfig<GroupsRoute>(GroupsRoute.name,
-                        path: '', routeBuilder: (_) => const GroupsRoute()),
+                        path: 'root', routeBuilder: (_) => const GroupsRoute()),
                     _i1.RouteConfig<GroupsDetailsRoute>(GroupsDetailsRoute.name,
-                        path: 'details',
+                        path: 'root/details',
                         routeBuilder: (_) => const GroupsDetailsRoute())
                   ]),
               _i1.RouteConfig<AccountFeature>(AccountFeature.name,
@@ -106,13 +108,13 @@ class AccountFeature extends _i1.PageRouteInfo {
 }
 
 class GroupsRoute extends _i1.PageRouteInfo {
-  const GroupsRoute() : super(name, path: '');
+  const GroupsRoute() : super(name, path: 'root');
 
   static const String name = 'GroupsRoute';
 }
 
 class GroupsDetailsRoute extends _i1.PageRouteInfo {
-  const GroupsDetailsRoute() : super(name, path: 'details');
+  const GroupsDetailsRoute() : super(name, path: 'root/details');
 
   static const String name = 'GroupsDetailsRoute';
 }

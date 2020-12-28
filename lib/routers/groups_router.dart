@@ -8,7 +8,8 @@ const groupsRouter = AutoRoute(
   name: 'GroupsFeature',
   page: EmptyRouterPage,
   children: [
-    AutoRoute(path: '', page: GroupsPage),
-    AutoRoute(path: 'details', page: GroupsDetailsPage)
+    RedirectRoute(path: "", redirectTo: "root"),
+    AutoRoute(path: 'root', page: GroupsPage),
+    AutoRoute(path: 'root/details', page: GroupsDetailsPage)
   ],
 );
